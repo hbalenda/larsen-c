@@ -12,7 +12,7 @@
 
 .left {
   background-color: #f2f6f5;
-  width: 50%; /* Each panel takes up half the container */
+  width: 35%; /* Each panel takes up half the container */
   height: 100vh; /* Used for demo purposes */
   float: left; /* Makes sure panels are side-by-side */
   position: relative; /* Needed to define the z-index */
@@ -21,7 +21,7 @@
 
 .right {
   background-color: #f2f6f5;
-  width: 50%; /* Each panel takes up half the container */
+  width: 65%; /* Each panel takes up half the container */
   height: 100vh; /* Used for demo purposes */
   float: right; /* Makes sure panels are side-by-side */
   position: relative; /* Needed to define the z-index */
@@ -30,16 +30,16 @@
 
 .right-active {
   margin-right: -50% !important;
-  transition: all 1000s ease-out;
+  transition: all 3000s ease-out;
   -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
-  animation-delay: 1s;
+  animation-delay: 5s;
 }
 
 .left-active {
   margin-left: -50% !important;
-  transition: all 1000s ease-out;
+  transition: all 6000s ease-out;
   -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
-  animation-delay: 1s;
+  animation-delay: 10s;
 }
 
 .ice-prize {

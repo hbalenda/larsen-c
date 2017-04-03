@@ -4,13 +4,12 @@
   "private": true,
   "dependencies": {
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-scripts": "0.9.5"
   },
   "engines": {
-    "node": "7.4.0"
-  },
-  "devDependencies": {
-    "react-scripts": "0.9.5"
+    "node": "7.4.0",
+    "npm":"4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,7 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/hbalenda/larsen-c.git"
   },
-  "author": "",
+  "author": "Hannah Balenda",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hbalenda/larsen-c/issues"
