@@ -36,7 +36,6 @@ class App extends React.Component {
   }
 
   stopDrift() {
-    console.log("Calling stopDrift")
     var rightShelf = document.getElementsByClassName('right')[0];
     var leftShelf = document.getElementsByClassName('left')[0];
 
@@ -51,7 +50,7 @@ class App extends React.Component {
         leftShelf.classList.remove('left-active');
 
     clearInterval(this.timer);
-    this.timer = setTimeout(this.startDrift,500);
+    this.timer = setTimeout(this.startDrift,300);
   }
 
   render() {

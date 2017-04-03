@@ -7,10 +7,11 @@
 .ice-wrapper {
   width: 100%;
   height: 100%;
+
 }
 
 .left {
-  background-color: #c6cbcc;
+  background-color: #f2f6f5;
   width: 50%; /* Each panel takes up half the container */
   height: 100vh; /* Used for demo purposes */
   float: left; /* Makes sure panels are side-by-side */
@@ -19,7 +20,7 @@
 }
 
 .right {
-  background-color: #c6cbcc;
+  background-color: #f2f6f5;
   width: 50%; /* Each panel takes up half the container */
   height: 100vh; /* Used for demo purposes */
   float: right; /* Makes sure panels are side-by-side */
@@ -29,14 +30,14 @@
 
 .right-active {
   margin-right: -50% !important;
-  transition: all 30s ease-out;
+  transition: all 1000s ease-out;
   -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
   animation-delay: 1s;
 }
 
 .left-active {
   margin-left: -50% !important;
-  transition: all 30s ease-out;
+  transition: all 1000s ease-out;
   -webkit-animation-delay: 1s; /* Safari 4.0 - 8.0 */
   animation-delay: 1s;
 }
