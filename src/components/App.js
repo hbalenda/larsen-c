@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import Message from './Message';
 
 class App extends React.Component {
   constructor() {
@@ -53,9 +54,14 @@ class App extends React.Component {
     this.timer = setTimeout(this.startDrift,300);
   }
 
+  getMessage() {
+    return `It's pretty boring watching ice melt, huh.`;
+  }
+
   render() {
     return (
       <div className="App" onMouseMove={this.drift}>
+        <Message message={this.getMessage()} />
         <div className="ice-wrapper">
           <div className={this.getClassNames("right").join(" ")}>
           </div>
