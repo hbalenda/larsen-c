@@ -8,8 +8,8 @@
     "react-scripts": "0.9.5"
   },
   "engines": {
-    "node": "7.4.0",
-    "npm":"4.0.5"
+    "node": "8.0.0",
+    "npm": "5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
