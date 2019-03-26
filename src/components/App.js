@@ -10,7 +10,18 @@ class App extends React.Component {
     this.drift = this.drift.bind(this);
     this.getClassNames = this.getClassNames.bind(this);
     this.state = {
-      drift: false
+      drift: false,
+      activeMessageIndex: 0,
+      messages: [
+        `It's pretty boring watching ice melt...`,
+        `Try to keep moving your mouse to prevent the glaciers from separating!`,
+        `It gets pretty tiring though, huh...`,
+        `It's almost as if...`,
+        `...the effort of the individual to prevent global warming...`,
+        `...pales in comparison to the impact that would be made if change happened at a corporate and policy level...`,
+        `Sigh...`,
+        `C'est la vie!`,
+      ]
     };
   }
 
@@ -54,14 +65,21 @@ class App extends React.Component {
     this.timer = setTimeout(this.startDrift,300);
   }
 
-  getMessage() {
-    return `It's pretty boring watching ice melt, huh.`;
+  changeMessage() {
+    if (this.state.activeMessageIndex < this.state.messages.length - 1) {
+      var newIndex = this.state.activeMessageIndex+1;
+      this.setState({activeMessageIndex: newIndex});
+    }
+  }
+
+  componentDidMount() {
+    setInterval(this.changeMessage.bind(this), 10000);
   }
 
   render() {
     return (
       <div className="App" onMouseMove={this.drift}>
-        <Message message={this.getMessage()} />
+        <Message message={this.state.messages[this.state.activeMessageIndex]} />
         <div className="ice-wrapper">
           <div className={this.getClassNames("right").join(" ")}>
           </div>

@@ -7,8 +7,11 @@ const messageStyle = {
   right:10,
   color: '#c3d9ed',
   fontFamily: 'Inconsolata',
-  padding:10,
+  padding: `10px 20px`,
   border: '2px dotted',
+  backgroundColor: '#f2f6f5',
+  width: '300px',
+  fontWeight: 'bold',
 }
 
 function Message(props) {
