@@ -10,15 +10,15 @@ class App extends React.Component {
     this.drift = this.drift.bind(this);
     this.getClassNames = this.getClassNames.bind(this);
     this.state = {
+      width: window.innerWidth,
       drift: false,
       activeMessageIndex: 0,
       messages: [
         `Why don't you pause for a moment and take a deep breath...`,
-        `Have some "me" time... you deserve it.`,
+        `Now try moving your mouse a little.`,
         `Uh oh... what's happening...`,
         `Try moving your mouse to prevent the glaciers from separating.`,
         `It gets pretty tiring though, huh...`,
-        `And it's pretty boring watching ice melt...`,
         `It's almost as if...`,
         `...the effort of the individual to prevent global warming...`,
         `...pales in comparison to the impact that would be made if change happened at a corporate and policy level...`,
@@ -39,7 +39,7 @@ class App extends React.Component {
   drift(){
     !this.state.drift ? this.startDrift() : this.stopDrift();
     this.setState({
-      drift:true
+      drift: true
     })
   }
 
@@ -75,14 +75,36 @@ class App extends React.Component {
     }
   }
 
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+    if (this.state.width <= 500) {
+      var messages = this.state.messages;
+      messages[1] = `Now try tapping once.`;
+      messages[3] = `Try tapping and holding to prevent the glaciers from separating.`;
+      this.setState({
+        messages: messages,
+      })
+    }
+  };
+
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+
   componentDidMount() {
-    setInterval(this.changeMessage.bind(this), 10000);
+    this.handleWindowSizeChange();
+    setInterval(this.changeMessage.bind(this), 5000);
   }
 
   render() {
+    const { activeMessageIndex, messages } = this.state;
     return (
-      <div className="App" onMouseMove={this.drift}>
-        <Message message={this.state.messages[this.state.activeMessageIndex]} />
+      <div className="App" onMouseMove={this.drift} onTouchStart={this.drift} onTouchEnd={this.drift}>
+        <Message message={messages[activeMessageIndex]} />
         <div className="ice-wrapper">
           <div className={this.getClassNames("right").join(" ")}>
           </div>
